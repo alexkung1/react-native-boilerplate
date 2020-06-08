@@ -3,7 +3,11 @@ import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 import Home from './Home/Home'
 
-const Stack = createStackNavigator()
+export type RootNavigatorScreenParamList = {
+    Home: {}
+}
+
+const Stack = createStackNavigator<RootNavigatorScreenParamList>()
 
 const RootNavigator: React.FC = () => {
     return (
