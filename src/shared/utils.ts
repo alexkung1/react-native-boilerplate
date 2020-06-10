@@ -2,7 +2,7 @@ import Axios from 'axios'
 import { useEffect, useRef } from 'react'
 
 export const axiosClient = Axios.create({
-    // baseURL: '',
+    baseURL: 'https://deckofcardsapi.com/api/deck',
     // headers: {
     //     Authorization: `Bearer ${token}`
     // }
