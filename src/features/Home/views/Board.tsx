@@ -38,7 +38,7 @@ const Board: React.FC<Props> = ({ board, onChangeDirection }: Props) => {
         <GestureRecognizer
             config={{
                 velocityThreshold: 0.1,
-                directionalOffsetThreshold: 10,
+                directionalOffsetThreshold: 200,
             }}
             onSwipeDown={() => onChangeDirection([0, -1])}
             onSwipeUp={() => onChangeDirection([0, 1])}
