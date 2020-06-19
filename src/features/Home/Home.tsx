@@ -16,9 +16,7 @@ const styles = StyleSheet.create({
 const Home: React.FC = () => {
     return (
         <SafeAreaView style={styles.container}>
-            <View style={styles.content}>
-                <Button title="Start here!" icon={<ShoppingBagIcon width={40} height={40} fill={'#fffbf6'} />} />
-            </View>
+            <View style={styles.content}></View>
         </SafeAreaView>
     )
 }
