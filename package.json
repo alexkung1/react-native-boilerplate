@@ -6,7 +6,8 @@
         "ios": "expo start --ios",
         "web": "expo start --web",
         "eject": "expo eject",
-        "test": "jest"
+        "test": "jest",
+        "test:debug": "env CI=vscode-jest-tests /usr/local/bin/node --inspect-brk=19731 node_modules/jest/bin/jest.js --runInBand"
     },
     "dependencies": {
         "@react-native-community/masked-view": "0.1.6",
@@ -33,6 +34,7 @@
         "@storybook/addon-links": "^5.3.19",
         "@storybook/addons": "^5.3.19",
         "@storybook/react-native": "^5.3.19",
+        "@testing-library/jest-native": "^3.1.0",
         "@types/jest": "^25.2.3",
         "@types/react": "~16.9.23",
         "@types/react-native": "~0.61.17",
@@ -49,12 +51,16 @@
         "jest-expo": "^37.0.0",
         "prettier": "^1.19.1",
         "react-native-svg-transformer": "^0.14.3",
+        "react-native-testing-library": "^2.1.0",
         "react-test-renderer": "^16.13.1",
         "typescript": "~3.8.3"
     },
     "private": true,
     "jest": {
         "preset": "jest-expo",
+        "setupFilesAfterEnv": [
+            "@testing-library/jest-native/extend-expect"
+        ],
         "transformIgnorePatterns": [
             "node_modules/(?!(jest-)?react-native|react-clone-referenced-element|@react-native-community|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base|@sentry/.*)"
         ]
